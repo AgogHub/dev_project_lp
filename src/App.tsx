@@ -101,76 +101,51 @@ function App() {
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <section className="relative bg-[#050c1a] py-16 md:py-24 px-4 overflow-hidden">
-                {/* グリッドライン */}
-                <div className="absolute inset-0" style={{
-                    backgroundImage: 'linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px)',
-                    backgroundSize: '48px 48px'
-                }} />
-                {/* 中央グロー */}
-                <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full"
-                    style={{ background: 'radial-gradient(ellipse, rgba(56,189,248,0.12) 0%, transparent 70%)' }} />
-                {/* 右グロー */}
-                <div className="absolute top-0 right-0 w-80 h-80 rounded-full"
-                    style={{ background: 'radial-gradient(ellipse, rgba(139,92,246,0.15) 0%, transparent 70%)' }} />
+            <section className="bg-blue-900 overflow-hidden">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row min-h-[480px]">
+                    {/* 左：テキストパネル */}
+                    <div className="flex-1 flex flex-col justify-center px-8 md:px-12 py-16 md:py-20">
+                        {/* バッジ */}
+                        <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 bg-white/10 border border-white/20 text-blue-100 rounded-md text-sm font-medium w-fit">
+                            IT導入補助金 2026年度 申請支援受付中
+                        </div>
 
-                <div className="max-w-6xl mx-auto relative z-10">
-                    <div className="grid md:grid-cols-5 gap-10 items-center">
-                        {/* 左側：テキスト */}
-                        <div className="md:col-span-3">
-                            {/* ステータスバッジ */}
-                            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-300 text-sm font-medium">
-                                <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-                                IT導入補助金 2026年度 申請支援受付中
-                            </div>
+                        {/* メインヘッドライン */}
+                        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-tight mb-6">
+                            もう、手作業に<br />
+                            <span className="text-orange-400">追われなくていい。</span>
+                        </h1>
 
-                            {/* メインヘッドライン */}
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-                                <span className="text-white">もう、手作業に</span><br />
-                                <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
-                                    追われなくていい。
-                                </span>
-                            </h1>
+                        <p className="text-blue-200 text-lg leading-relaxed mb-10 max-w-md">
+                            中小企業のAI導入を、<br className="hidden md:block" />
+                            相談から実装まで一気通貫でサポート。
+                        </p>
 
-                            <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                                中小企業のAI導入を、相談から実装まで一気通貫でサポート。<br className="hidden md:block" />
-                                <span className="text-slate-500 text-base">IT導入補助金を活用すれば、費用負担も大幅に下げられます。</span>
-                            </p>
-
-                            {/* CTA */}
+                        {/* CTA */}
+                        <div>
                             <Button
                                 onClick={scrollToContact}
                                 size="lg"
-                                className="bg-sky-500 hover:bg-sky-400 text-white px-8 py-6 text-lg font-bold rounded-xl shadow-lg shadow-sky-500/25 transition-all"
+                                className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-6 text-lg font-bold rounded-lg shadow-lg transition-all"
                             >
                                 まず30分、無料で相談する
                                 <ChevronRight className="ml-2 w-5 h-5" />
                             </Button>
-                            <p className="text-slate-600 text-sm mt-3">
+                            <p className="text-blue-400 text-sm mt-3">
                                 ※ 初回相談は無料。全国の中小企業様歓迎。
                             </p>
                         </div>
+                    </div>
 
-                        {/* 右側：画像 + テックフレーム */}
-                        <div className="md:col-span-2 relative">
-                            {/* コーナー装飾 */}
-                            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-sky-500/60 z-20" />
-                            <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-sky-500/60 z-20" />
-                            <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-sky-500/60 z-20" />
-                            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-sky-500/60 z-20" />
-                            {/* 外枠グロー */}
-                            <div className="absolute inset-0 rounded-xl"
-                                style={{ boxShadow: '0 0 40px rgba(56,189,248,0.2), inset 0 0 40px rgba(56,189,248,0.05)' }} />
-                            <img
-                                src={`${import.meta.env.BASE_URL}teamwork.jpg`}
-                                alt="業務改善のイメージ"
-                                className="relative w-full h-72 md:h-96 object-cover rounded-xl"
-                                style={{ filter: 'brightness(0.85) saturate(0.9)' }}
-                            />
-                            {/* スキャンライン */}
-                            <div className="absolute inset-0 rounded-xl pointer-events-none"
-                                style={{ background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px)' }} />
-                        </div>
+                    {/* 右：画像パネル（md以上で表示） */}
+                    <div className="hidden md:block w-[45%] relative flex-shrink-0">
+                        <img
+                            src={`${import.meta.env.BASE_URL}teamwork.jpg`}
+                            alt="業務改善のイメージ"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        {/* 左フェード（写真とナビーの境界を自然につなぐ） */}
+                        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-blue-900 to-transparent" />
                     </div>
                 </div>
             </section>
