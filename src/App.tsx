@@ -101,76 +101,49 @@ function App() {
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-16 md:py-24 px-4 overflow-hidden">
-                {/* 背景装飾 */}
-                <div className="absolute inset-0 opacity-10" style={{
-                    backgroundImage: 'radial-gradient(circle, #93c5fd 1px, transparent 1px)',
-                    backgroundSize: '32px 32px'
-                }}></div>
-                <div className="absolute right-0 top-0 w-96 h-96 bg-blue-500 rounded-full opacity-10 blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-                <div className="absolute left-0 bottom-0 w-72 h-72 bg-blue-400 rounded-full opacity-10 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-
-                <div className="max-w-6xl mx-auto relative z-10">
+            <section className="bg-white border-b border-gray-100 py-14 md:py-20 px-4">
+                <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-5 gap-10 items-center">
                         {/* 左側：テキスト */}
                         <div className="md:col-span-3">
                             {/* バッジ */}
-                            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/15 border border-white/30 text-white rounded-full text-sm font-semibold backdrop-blur-sm">
-                                <Shield className="w-4 h-4 text-blue-300" />
+                            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-sm font-semibold">
+                                <Shield className="w-4 h-4" />
                                 IT導入補助金 2026年度 申請支援受付中
                             </div>
 
                             {/* メインヘッドライン */}
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
                                 もう、手作業に<br />
-                                <span className="text-yellow-300">追われなくていい。</span>
+                                <span className="text-blue-700">追われなくていい。</span>
                             </h1>
 
-                            <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8">
+                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
                                 中小企業のAI導入を、相談から実装まで一気通貫でサポート。<br className="hidden md:block" />
-                                <span className="text-blue-300 text-base">IT導入補助金を活用すれば、費用負担も大幅に下げられます。</span>
+                                <span className="text-gray-500 text-base">IT導入補助金を活用すれば、費用負担も大幅に下げられます。</span>
                             </p>
 
                             {/* CTA */}
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <Button
-                                    onClick={scrollToContact}
-                                    size="lg"
-                                    className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-6 text-lg shadow-xl transition-all font-bold rounded-xl"
-                                >
-                                    まず30分、無料で相談する
-                                    <ChevronRight className="ml-2 w-5 h-5" />
-                                </Button>
-                            </div>
-                            <p className="text-blue-300 text-sm mt-3">
+                            <Button
+                                onClick={scrollToContact}
+                                size="lg"
+                                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg shadow-md transition-all font-bold rounded-xl"
+                            >
+                                まず30分、無料で相談する
+                                <ChevronRight className="ml-2 w-5 h-5" />
+                            </Button>
+                            <p className="text-gray-400 text-sm mt-3">
                                 ※ 初回相談は無料。全国の中小企業様歓迎。
                             </p>
                         </div>
 
                         {/* 右側：サービスイメージ画像 */}
-                        <div className="md:col-span-2 flex justify-center">
-                            <div className="relative w-full max-w-sm">
-                                <div className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-2xl scale-105"></div>
-                                <img
-                                    src={`${import.meta.env.BASE_URL}teamwork.jpg`}
-                                    alt="業務改善のイメージ"
-                                    className="relative w-full h-72 md:h-96 object-cover rounded-2xl shadow-2xl"
-                                />
-                                {/* 浮かぶ実績カード */}
-                                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                        <CheckCircle2 className="w-6 h-6 text-green-600" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-gray-500">導入支援実績</p>
-                                        <p className="text-lg font-black text-gray-900">20社+</p>
-                                    </div>
-                                </div>
-                                <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-xl px-4 py-3">
-                                    <p className="text-xs text-gray-500">補助率</p>
-                                    <p className="text-lg font-black text-blue-700">最大75%</p>
-                                </div>
-                            </div>
+                        <div className="md:col-span-2">
+                            <img
+                                src={`${import.meta.env.BASE_URL}teamwork.jpg`}
+                                alt="業務改善のイメージ"
+                                className="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"
+                            />
                         </div>
                     </div>
                 </div>
@@ -224,18 +197,11 @@ function App() {
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* 悩み1 */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={`${import.meta.env.BASE_URL}overwhelmed.jpg`}
-                                    alt="パソコンの前で悩む経営者"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                                    <span className="text-3xl leading-none drop-shadow-lg">🤔</span>
-                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 01</span>
-                                </div>
-                            </div>
+                            <img
+                                src={`${import.meta.env.BASE_URL}overwhelmed.jpg`}
+                                alt="パソコンの前で悩む経営者"
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-5">
                                 <h3 className="text-base font-bold text-gray-900 mb-1.5">何から始めればいいかわからない</h3>
                                 <p className="text-gray-500 leading-relaxed text-sm">
@@ -246,18 +212,11 @@ function App() {
 
                         {/* 悩み2 */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={`${import.meta.env.BASE_URL}financial_stress.jpg`}
-                                    alt="コストを気にして書類を見る経営者"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                                    <span className="text-3xl leading-none drop-shadow-lg">💸</span>
-                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 02</span>
-                                </div>
-                            </div>
+                            <img
+                                src={`${import.meta.env.BASE_URL}financial_stress.jpg`}
+                                alt="コストを気にして書類を見る経営者"
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-5">
                                 <h3 className="text-base font-bold text-gray-900 mb-1.5">費用が高そうで動けない</h3>
                                 <p className="text-gray-500 leading-relaxed text-sm">
@@ -268,18 +227,11 @@ function App() {
 
                         {/* 悩み3 */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={`${import.meta.env.BASE_URL}contemplation.jpg`}
-                                    alt="一人でデスクに向かう経営者"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                                    <span className="text-3xl leading-none drop-shadow-lg">🙋</span>
-                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 03</span>
-                                </div>
-                            </div>
+                            <img
+                                src={`${import.meta.env.BASE_URL}contemplation.jpg`}
+                                alt="一人でデスクに向かう経営者"
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-5">
                                 <h3 className="text-base font-bold text-gray-900 mb-1.5">相談できる人がいない</h3>
                                 <p className="text-gray-500 leading-relaxed text-sm">
@@ -290,18 +242,11 @@ function App() {
 
                         {/* 悩み4 */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={`${import.meta.env.BASE_URL}unused.jpg`}
-                                    alt="ツールが使われていない職場"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                                    <span className="text-3xl leading-none drop-shadow-lg">📦</span>
-                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 04</span>
-                                </div>
-                            </div>
+                            <img
+                                src={`${import.meta.env.BASE_URL}unused.jpg`}
+                                alt="ツールが使われていない職場"
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-5">
                                 <h3 className="text-base font-bold text-gray-900 mb-1.5">導入したが現場で使われない</h3>
                                 <p className="text-gray-500 leading-relaxed text-sm">
