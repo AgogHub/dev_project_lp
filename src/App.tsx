@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronRight, CheckCircle2, Shield, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle } from 'lucide-react'
 
 const INDUSTRIES = [
     { value: 'manufacturing', label: '製造業' },
@@ -101,51 +101,75 @@ function App() {
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <section className="bg-slate-50 py-14 md:py-20 px-4">
-                <div className="max-w-6xl mx-auto">
+            <section className="relative bg-[#050c1a] py-16 md:py-24 px-4 overflow-hidden">
+                {/* グリッドライン */}
+                <div className="absolute inset-0" style={{
+                    backgroundImage: 'linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px)',
+                    backgroundSize: '48px 48px'
+                }} />
+                {/* 中央グロー */}
+                <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full"
+                    style={{ background: 'radial-gradient(ellipse, rgba(56,189,248,0.12) 0%, transparent 70%)' }} />
+                {/* 右グロー */}
+                <div className="absolute top-0 right-0 w-80 h-80 rounded-full"
+                    style={{ background: 'radial-gradient(ellipse, rgba(139,92,246,0.15) 0%, transparent 70%)' }} />
+
+                <div className="max-w-6xl mx-auto relative z-10">
                     <div className="grid md:grid-cols-5 gap-10 items-center">
                         {/* 左側：テキスト */}
                         <div className="md:col-span-3">
-                            {/* バッジ */}
-                            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-sm font-semibold">
-                                <Shield className="w-4 h-4" />
+                            {/* ステータスバッジ */}
+                            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-300 text-sm font-medium">
+                                <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                                 IT導入補助金 2026年度 申請支援受付中
                             </div>
 
                             {/* メインヘッドライン */}
-                            <div className="border-l-4 border-blue-600 pl-5 mb-6">
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-                                    もう、手作業に<br />
-                                    <span className="text-blue-700">追われなくていい。</span>
-                                </h1>
-                            </div>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                                <span className="text-white">もう、手作業に</span><br />
+                                <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+                                    追われなくていい。
+                                </span>
+                            </h1>
 
-                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                            <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                 中小企業のAI導入を、相談から実装まで一気通貫でサポート。<br className="hidden md:block" />
-                                <span className="text-gray-500 text-base">IT導入補助金を活用すれば、費用負担も大幅に下げられます。</span>
+                                <span className="text-slate-500 text-base">IT導入補助金を活用すれば、費用負担も大幅に下げられます。</span>
                             </p>
 
                             {/* CTA */}
                             <Button
                                 onClick={scrollToContact}
                                 size="lg"
-                                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg shadow-md transition-all font-bold rounded-xl"
+                                className="bg-sky-500 hover:bg-sky-400 text-white px-8 py-6 text-lg font-bold rounded-xl shadow-lg shadow-sky-500/25 transition-all"
                             >
                                 まず30分、無料で相談する
                                 <ChevronRight className="ml-2 w-5 h-5" />
                             </Button>
-                            <p className="text-gray-400 text-sm mt-3">
+                            <p className="text-slate-600 text-sm mt-3">
                                 ※ 初回相談は無料。全国の中小企業様歓迎。
                             </p>
                         </div>
 
-                        {/* 右側：サービスイメージ画像 */}
-                        <div className="md:col-span-2">
+                        {/* 右側：画像 + テックフレーム */}
+                        <div className="md:col-span-2 relative">
+                            {/* コーナー装飾 */}
+                            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-sky-500/60 z-20" />
+                            <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-sky-500/60 z-20" />
+                            <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-sky-500/60 z-20" />
+                            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-sky-500/60 z-20" />
+                            {/* 外枠グロー */}
+                            <div className="absolute inset-0 rounded-xl"
+                                style={{ boxShadow: '0 0 40px rgba(56,189,248,0.2), inset 0 0 40px rgba(56,189,248,0.05)' }} />
                             <img
                                 src={`${import.meta.env.BASE_URL}teamwork.jpg`}
                                 alt="業務改善のイメージ"
-                                className="w-full h-72 md:h-96 object-cover rounded-2xl shadow-md"
+                                className="relative w-full h-72 md:h-96 object-cover rounded-xl"
+                                style={{ filter: 'brightness(0.85) saturate(0.9)' }}
                             />
+                            {/* スキャンライン */}
+                            <div className="absolute inset-0 rounded-xl pointer-events-none"
+                                style={{ background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px)' }} />
                         </div>
                     </div>
                 </div>
@@ -188,7 +212,7 @@ function App() {
             </section>
 
             {/* 課題セクション */}
-            <section className="py-16 md:py-20 px-4 bg-white">
+            <section className="py-16 md:py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                         こんなお悩みはありませんか？
@@ -274,46 +298,46 @@ function App() {
             </section>
 
             {/* サービスセクション */}
-            <section className="py-16 md:py-20 px-4 bg-gray-900">
+            <section className="py-16 md:py-20 px-4 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                         サービスメニュー
                     </h2>
-                    <p className="text-center text-gray-400 mb-12 text-lg">
+                    <p className="text-center text-gray-600 mb-12 text-lg">
                         「まず話を聞きたい」から「実装まで任せたい」まで、段階に応じて選べます。
                     </p>
                     <div className="grid md:grid-cols-3 gap-6">
                         {/* スポット診断 */}
-                        <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 flex flex-col">
+                        <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg border border-blue-100 flex flex-col">
                             <div className="mb-4">
                                 <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                                     <MessageCircle className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-1">スポット診断コンサル</h3>
-                                <p className="text-2xl font-bold text-blue-400 mb-4">5万円〜 / 回</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-1">スポット診断コンサル</h3>
+                                <p className="text-2xl font-bold text-blue-700 mb-4">5万円〜 / 回</p>
                             </div>
-                            <ul className="space-y-2 text-gray-300 flex-1">
+                            <ul className="space-y-2 text-gray-700 flex-1">
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>業務ヒアリング（2〜3時間）</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>AI活用診断レポート納品</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>補助金活用シミュレーション</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>導入ロードマップ作成</span>
                                 </li>
                             </ul>
                         </div>
 
                         {/* AI導入顧問 */}
-                        <div className="bg-blue-600 rounded-xl p-8 border border-blue-500 flex flex-col relative">
+                        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-8 shadow-xl text-white flex flex-col relative">
                             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                                 <span className="bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1 rounded-full shadow">
                                     人気
@@ -323,7 +347,7 @@ function App() {
                                 <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
                                     <Brain className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-1">AI導入顧問契約</h3>
+                                <h3 className="text-xl font-bold mb-1">AI導入顧問契約</h3>
                                 <p className="text-2xl font-bold text-yellow-300 mb-4">月15万円〜 / 社</p>
                             </div>
                             <ul className="space-y-2 text-blue-100 flex-1">
@@ -351,29 +375,29 @@ function App() {
                         </div>
 
                         {/* 業務アプリ開発 */}
-                        <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 flex flex-col">
+                        <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg border border-blue-100 flex flex-col">
                             <div className="mb-4">
                                 <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                                     <Code className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-1">業務アプリ開発</h3>
-                                <p className="text-2xl font-bold text-blue-400 mb-4">要見積</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-1">業務アプリ開発</h3>
+                                <p className="text-2xl font-bold text-blue-700 mb-4">要見積</p>
                             </div>
-                            <ul className="space-y-2 text-gray-300 flex-1">
+                            <ul className="space-y-2 text-gray-700 flex-1">
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>要件定義・UI設計</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>モバイル / Web アプリ開発</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>AI機能（自動化・分析）の組み込み</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                                     <span>IT補助金を使った開発も可</span>
                                 </li>
                             </ul>
@@ -431,7 +455,7 @@ function App() {
             </section>
 
             {/* 支援の流れセクション */}
-            <section className="py-16 md:py-20 px-4 bg-slate-50">
+            <section className="py-16 md:py-20 px-4 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                         支援の流れ
@@ -487,7 +511,7 @@ function App() {
             </section>
 
             {/* プロフィールセクション */}
-            <section className="py-16 md:py-20 px-4 bg-white">
+            <section className="py-16 md:py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                         プロフィール
@@ -537,13 +561,13 @@ function App() {
             </section>
 
             {/* お客様の声セクション */}
-            <section className="py-16 md:py-20 px-4 bg-slate-50">
+            <section className="py-16 md:py-20 px-4 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                         お客様の声
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-lg shadow-sm p-8">
+                        <div className="bg-gray-50 rounded-lg shadow-sm p-8">
                             <div className="mb-4">
                                 <div className="flex text-yellow-400 mb-2">
                                     {'★★★★★'.split('').map((_, i) => (
@@ -561,7 +585,7 @@ function App() {
                                 <p className="text-sm text-gray-600">代表取締役 様</p>
                             </div>
                         </div>
-                        <div className="bg-white rounded-lg shadow-sm p-8">
+                        <div className="bg-gray-50 rounded-lg shadow-sm p-8">
                             <div className="mb-4">
                                 <div className="flex text-yellow-400 mb-2">
                                     {'★★★★★'.split('').map((_, i) => (
@@ -578,7 +602,7 @@ function App() {
                                 <p className="text-sm text-gray-600">所長 様</p>
                             </div>
                         </div>
-                        <div className="bg-white rounded-lg shadow-sm p-8 md:col-span-2">
+                        <div className="bg-gray-50 rounded-lg shadow-sm p-8 md:col-span-2">
                             <div className="mb-4">
                                 <div className="flex text-yellow-400 mb-2">
                                     {'★★★★★'.split('').map((_, i) => (
@@ -600,7 +624,7 @@ function App() {
             </section>
 
             {/* FAQセクション */}
-            <section className="py-16 md:py-20 px-4 bg-white">
+            <section className="py-16 md:py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                         よくある質問
@@ -657,7 +681,7 @@ function App() {
             </section>
 
             {/* 最終CTA・問い合わせフォームセクション */}
-            <section id="contact" className="py-16 md:py-20 px-4 bg-slate-50">
+            <section id="contact" className="py-16 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                         まず30分、話してみてください。
