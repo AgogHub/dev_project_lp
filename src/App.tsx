@@ -152,7 +152,7 @@ function App() {
                             <div className="relative w-full max-w-sm">
                                 <div className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-2xl scale-105"></div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&h=520&q=80"
+                                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=560&fit=crop"
                                     alt="業務改善のイメージ"
                                     className="relative w-full h-72 md:h-96 object-cover rounded-2xl shadow-2xl"
                                     onError={(e) => {
@@ -230,7 +230,7 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600&h=280&q=80"
+                                    src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
                                     alt="パソコンの前で悩む経営者"
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -257,7 +257,7 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&h=280&q=80"
+                                    src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
                                     alt="コストを気にして書類を見る経営者"
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -284,7 +284,7 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&w=600&h=280&q=80"
+                                    src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
                                     alt="一人でデスクに向かう経営者"
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -311,7 +311,7 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&h=280&q=80"
+                                    src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
                                     alt="ツールが使われていない職場"
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -575,10 +575,10 @@ function App() {
                                 <div className="text-center">
                                     <img
                                         src={`${import.meta.env.BASE_URL}profile-image.png`}
-                                        alt="ITドクターミズキ"
+                                        alt="水木 大悟"
                                         className="w-32 h-32 md:w-40 md:h-40 object-contain mx-auto mb-4"
                                     />
-                                    <p className="font-bold text-gray-900 text-lg">ITドクターミズキ</p>
+                                    <p className="font-bold text-gray-900 text-lg">水木 大悟</p>
                                     <p className="text-blue-700 text-sm font-medium mt-1">
                                         中小企業AI導入支援 / PM × エンジニア
                                     </p>
@@ -668,7 +668,7 @@ function App() {
                                 補助金で費用もほぼカバーできる見通しが立ちました。そのままIT導入補助金の申請もお願いしています。」
                             </p>
                             <div className="border-t border-gray-200 pt-4">
-                                <p className="font-semibold text-gray-900">製造業 C社</p>
+                                <p className="font-semibold text-gray-900">飲食・サービス C社</p>
                                 <p className="text-sm text-gray-600">経営者 様</p>
                             </div>
                         </div>
@@ -852,10 +852,10 @@ function App() {
             {/* フッター */}
             <footer className="bg-gray-900 text-gray-400 py-8 px-4">
                 <div className="max-w-4xl mx-auto text-center">
-                    <p className="font-semibold text-white mb-2">ITドクターミズキ</p>
+                    <p className="font-semibold text-white mb-2">株式会社Agog</p>
                     <p className="text-sm mb-1">中小企業AI導入支援 / IT導入補助金申請サポート</p>
                     <p className="text-sm">
-                        © 2026 ITドクターミズキ. All rights reserved.
+                        © 2026 Agog Inc. All rights reserved.
                     </p>
                 </div>
             </footer>
