@@ -20,13 +20,21 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// カテゴリのラベルマッピング
+// カテゴリ（業種）のラベルマッピング
 $category_labels = [
-    'ai' => 'AI導入',
+    'manufacturing' => '製造業',
+    'construction'  => '建設業',
+    'retail'        => '小売・卸売',
+    'food'          => '飲食・サービス',
+    'professional'  => '士業（税理士・社労士など）',
+    'agriculture'   => '農業・水産業',
+    'logistics'     => '運輸・物流',
+    'other'         => 'その他',
+    // 旧値との後方互換
+    'ai'       => 'AI導入',
     'estimate' => '見積もりチェック',
-    'risk' => '炎上リスク診断',
-    'app' => 'アプリ開発',
-    'other' => 'その他',
+    'risk'     => '炎上リスク診断',
+    'app'      => 'アプリ開発',
 ];
 
 // 入力値の取得とサニタイズ
@@ -54,12 +62,10 @@ if (empty($email)) {
     $errors[] = 'メールアドレスの形式が正しくありません';
 }
 
-if (empty($message)) {
-    $errors[] = '相談内容は必須です';
-}
+// message は任意項目のため必須チェックなし
 
 if (empty($category) || !isset($category_labels[$category])) {
-    $errors[] = 'カテゴリを選択してください';
+    $errors[] = '業種を選択してください';
 }
 
 // エラーがある場合は返す

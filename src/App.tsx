@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronRight, CheckCircle2, Shield, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Shield, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle, HelpCircle, Banknote, UserX, AlertCircle } from 'lucide-react'
 
 const INDUSTRIES = [
     { value: 'manufacturing', label: '製造業' },
@@ -101,85 +101,65 @@ function App() {
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <section className="relative bg-white py-8 md:py-12 px-4 overflow-hidden">
-                {/* トップバナー */}
-                <div className="bg-blue-800 text-white py-2 px-4 text-center text-sm font-semibold mb-6">
-                    ITドクターミズキ
-                </div>
+            <section className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-16 md:py-24 px-4 overflow-hidden">
+                {/* 背景装飾 */}
+                <div className="absolute inset-0 opacity-10" style={{
+                    backgroundImage: 'radial-gradient(circle, #93c5fd 1px, transparent 1px)',
+                    backgroundSize: '32px 32px'
+                }}></div>
+                <div className="absolute right-0 top-0 w-96 h-96 bg-blue-500 rounded-full opacity-10 blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute left-0 bottom-0 w-72 h-72 bg-blue-400 rounded-full opacity-10 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
 
                 <div className="max-w-6xl mx-auto relative z-10">
-                    {/* 背景装飾 */}
-                    <div className="absolute left-0 top-0 w-64 h-64 bg-blue-100 rounded-full opacity-30 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-                    <div className="absolute right-0 bottom-0 w-64 h-64 bg-blue-100 rounded-full opacity-30 blur-3xl translate-x-1/2 translate-y-1/2"></div>
-                    <div className="absolute left-1/4 top-1/4 w-32 h-32 bg-blue-50 rounded-full opacity-40 blur-2xl"></div>
-                    <div className="absolute right-1/4 bottom-1/4 w-32 h-32 bg-blue-50 rounded-full opacity-40 blur-2xl"></div>
-                    <div className="absolute inset-0 opacity-10" style={{
-                        backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)',
-                        backgroundSize: '20px 20px'
-                    }}></div>
-
-                    <div className="relative z-20">
-                        {/* バッジ */}
-                        <div className="inline-block mb-4 px-6 py-2 bg-blue-600 text-white rounded-lg text-base font-bold">
-                            IT導入補助金対応 — 2026年度 申請支援受付中
-                        </div>
-
-                        {/* メインコンテンツエリア */}
-                        <div className="grid md:grid-cols-12 gap-6 items-center mb-8">
-                            {/* 左側：アイコンエリア */}
-                            <div className="md:col-span-3 flex items-center justify-center">
-                                <div className="relative w-32 h-32 md:w-40 md:h-40">
-                                    <div className="absolute inset-0 bg-blue-100 rounded-2xl flex items-center justify-center">
-                                        <Brain className="w-16 h-16 md:w-20 md:h-20 text-blue-600" />
-                                    </div>
-                                    <div className="absolute -bottom-2 -right-2 bg-blue-200 rounded-lg p-2">
-                                        <Shield className="w-8 h-8 text-blue-700" />
-                                    </div>
-                                </div>
+                    <div className="grid md:grid-cols-5 gap-8 items-center">
+                        {/* 左側：テキスト */}
+                        <div className="md:col-span-3">
+                            {/* バッジ */}
+                            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold shadow-lg">
+                                <Shield className="w-4 h-4" />
+                                IT導入補助金 2026年度 申請支援受付中
                             </div>
 
-                            {/* 中央：メインヘッドライン */}
-                            <div className="md:col-span-6 text-center md:text-left">
-                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 mb-4 leading-tight">
-                                    補助金を使ってAIで<br />
-                                    業務を自動化する。<br />
-                                    <span className="text-blue-600">相談から実装まで、全部やります。</span>
-                                </h1>
-                                <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                                    「AIを使いたいけど何から始めればいい？」<br />
-                                    IT導入補助金の申請支援から要件定義・実装まで、<br />
-                                    PMかつエンジニアが一気通貫で対応します。
-                                </p>
-                            </div>
+                            {/* メインヘッドライン */}
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                                補助金×AIで、<br />
+                                <span className="text-yellow-300">業務を変える。</span>
+                            </h1>
 
-                            {/* 右側：プロフィール画像 */}
-                            <div className="md:col-span-3 flex items-center justify-center relative">
-                                <div className="relative">
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}profile-image.png`}
-                                        alt="ITドクターミズキ プロフィール"
-                                        className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-contain"
-                                    />
-                                    <div className="absolute -top-2 -right-2 bg-yellow-400 rounded-full px-3 py-1 text-xs font-bold text-gray-900 border-2 border-dotted border-yellow-500 shadow-lg">
-                                        IT一筋<br />10年以上
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8">
+                                中小企業のAI導入を、<br className="hidden md:block" />
+                                相談から実装まで一気通貫で。
+                            </p>
 
-                        {/* CTAボタン */}
-                        <div className="flex flex-col items-center md:items-start gap-3">
-                            <Button
-                                onClick={scrollToContact}
-                                size="lg"
-                                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all font-bold"
-                            >
-                                無料相談を予約する（30分・オンライン）
-                                <ChevronRight className="ml-2 w-5 h-5" />
-                            </Button>
-                            <p className="text-sm text-gray-600 text-center md:text-left">
+                            {/* CTA */}
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button
+                                    onClick={scrollToContact}
+                                    size="lg"
+                                    className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-6 text-lg shadow-xl hover:shadow-orange-500/30 transition-all font-bold rounded-xl"
+                                >
+                                    無料相談を予約する（30分）
+                                    <ChevronRight className="ml-2 w-5 h-5" />
+                                </Button>
+                            </div>
+                            <p className="text-blue-300 text-sm mt-3">
                                 ※ 初回相談は無料。全国の中小企業様歓迎。
                             </p>
+                        </div>
+
+                        {/* 右側：プロフィール画像 */}
+                        <div className="md:col-span-2 flex justify-center">
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-2xl scale-110"></div>
+                                <img
+                                    src={`${import.meta.env.BASE_URL}profile-image.png`}
+                                    alt="プロフィール"
+                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain drop-shadow-2xl"
+                                />
+                                <div className="absolute -top-3 -right-3 bg-yellow-400 rounded-2xl px-3 py-2 text-xs font-black text-gray-900 shadow-xl">
+                                    IT一筋<br />10年以上
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -231,29 +211,49 @@ function App() {
                         地方の中小企業・経営者から、よくいただく声です。
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-500">
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">何から始めればいいかわからない</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                ChatGPTは使ってみた。でも業務に組み込む方法がわからない。
-                            </p>
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-5 items-start">
+                            <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                                <HelpCircle className="w-9 h-9 text-blue-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">何から始めればいいかわからない</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                    ChatGPTは使ってみた。でも業務に組み込む方法がわからない。
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-500">
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">費用が高そうで動けない</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                ITツールの導入費用が不安。補助金が使えると聞いたが申請が難しそう。
-                            </p>
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-5 items-start">
+                            <div className="flex-shrink-0 w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                                <Banknote className="w-9 h-9 text-green-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">費用が高そうで動けない</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                    ITツールの導入費用が不安。補助金が使えると聞いたが申請が難しそう。
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-500">
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">相談できる人がいない</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                大手ITベンダーは中小企業を相手にしてくれない。身近に頼れる専門家がいない。
-                            </p>
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-5 items-start">
+                            <div className="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center">
+                                <UserX className="w-9 h-9 text-purple-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">相談できる人がいない</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                    大手ITベンダーは中小企業を相手にしてくれない。身近に頼れる専門家がいない。
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-500">
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">導入したが現場で使われない</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                ツールを入れたが定着しない。現場の運用まで一緒に考えてほしい。
-                            </p>
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-5 items-start">
+                            <div className="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center">
+                                <AlertCircle className="w-9 h-9 text-orange-500" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">導入したが現場で使われない</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                    ツールを入れたが定着しない。現場の運用まで一緒に考えてほしい。
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="mt-10 text-center">
@@ -323,7 +323,7 @@ function App() {
                                     <Brain className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-1">AI導入顧問契約</h3>
-                                <p className="text-2xl font-bold text-yellow-300 mb-4">月30万円〜 / 社</p>
+                                <p className="text-2xl font-bold text-yellow-300 mb-4">月98,000円〜 / 社</p>
                             </div>
                             <ul className="space-y-2 text-blue-100 flex-1">
                                 <li className="flex items-start gap-2">
