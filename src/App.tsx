@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronRight, CheckCircle2, Shield, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle, HelpCircle, Banknote, UserX, AlertCircle } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Shield, Brain, Code, Clock, Users, ArrowRight, MapPin, BadgePercent, MessageCircle } from 'lucide-react'
 
 const INDUSTRIES = [
     { value: 'manufacturing', label: '製造業' },
@@ -219,98 +219,94 @@ function App() {
                         こんなお悩みはありませんか？
                     </h2>
                     <p className="text-center text-gray-600 mb-12 text-lg">
-                        地方の中小企業・経営者から、よくいただく声です。
+                        みなさんから、よくいただく声です。
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* 悩み1 */}
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-44 overflow-hidden">
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div className="relative h-48 overflow-hidden">
                                 <img
                                     src={`${import.meta.env.BASE_URL}overwhelmed.jpg`}
                                     alt="パソコンの前で悩む経営者"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                                    <span className="text-3xl leading-none drop-shadow-lg">🤔</span>
+                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 01</span>
+                                </div>
                             </div>
-                            <div className="p-5 flex gap-4 items-start">
-                                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                                    <HelpCircle className="w-7 h-7 text-blue-600" />
-                                </div>
-                                <div>
-                                    <h3 className="text-base font-bold text-gray-900 mb-1">何から始めればいいかわからない</h3>
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        ChatGPTは使ってみた。でも業務に組み込む方法がわからない。
-                                    </p>
-                                </div>
+                            <div className="p-5">
+                                <h3 className="text-base font-bold text-gray-900 mb-1.5">何から始めればいいかわからない</h3>
+                                <p className="text-gray-500 leading-relaxed text-sm">
+                                    ChatGPTは使ってみた。でも業務に組み込む方法がわからない。
+                                </p>
                             </div>
                         </div>
 
                         {/* 悩み2 */}
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-44 overflow-hidden">
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div className="relative h-48 overflow-hidden">
                                 <img
                                     src={`${import.meta.env.BASE_URL}financial_stress.jpg`}
                                     alt="コストを気にして書類を見る経営者"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                                    <span className="text-3xl leading-none drop-shadow-lg">💸</span>
+                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 02</span>
+                                </div>
                             </div>
-                            <div className="p-5 flex gap-4 items-start">
-                                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                    <Banknote className="w-7 h-7 text-green-600" />
-                                </div>
-                                <div>
-                                    <h3 className="text-base font-bold text-gray-900 mb-1">費用が高そうで動けない</h3>
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        ITツールの導入費用が不安。補助金が使えると聞いたが申請が難しそう。
-                                    </p>
-                                </div>
+                            <div className="p-5">
+                                <h3 className="text-base font-bold text-gray-900 mb-1.5">費用が高そうで動けない</h3>
+                                <p className="text-gray-500 leading-relaxed text-sm">
+                                    ITツールの導入費用が不安。補助金が使えると聞いたが申請が難しそう。
+                                </p>
                             </div>
                         </div>
 
                         {/* 悩み3 */}
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-44 overflow-hidden">
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div className="relative h-48 overflow-hidden">
                                 <img
                                     src={`${import.meta.env.BASE_URL}contemplation.jpg`}
                                     alt="一人でデスクに向かう経営者"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                                    <span className="text-3xl leading-none drop-shadow-lg">🙋</span>
+                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 03</span>
+                                </div>
                             </div>
-                            <div className="p-5 flex gap-4 items-start">
-                                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                                    <UserX className="w-7 h-7 text-purple-600" />
-                                </div>
-                                <div>
-                                    <h3 className="text-base font-bold text-gray-900 mb-1">相談できる人がいない</h3>
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        大手ITベンダーは中小企業を相手にしてくれない。身近に頼れる専門家がいない。
-                                    </p>
-                                </div>
+                            <div className="p-5">
+                                <h3 className="text-base font-bold text-gray-900 mb-1.5">相談できる人がいない</h3>
+                                <p className="text-gray-500 leading-relaxed text-sm">
+                                    大手ITベンダーは中小企業を相手にしてくれない。身近に頼れる専門家がいない。
+                                </p>
                             </div>
                         </div>
 
                         {/* 悩み4 */}
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="relative h-44 overflow-hidden">
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div className="relative h-48 overflow-hidden">
                                 <img
                                     src={`${import.meta.env.BASE_URL}unused.jpg`}
                                     alt="ツールが使われていない職場"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                                    <span className="text-3xl leading-none drop-shadow-lg">📦</span>
+                                    <span className="text-white text-xs font-semibold tracking-wider bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">悩み 04</span>
+                                </div>
                             </div>
-                            <div className="p-5 flex gap-4 items-start">
-                                <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                                    <AlertCircle className="w-7 h-7 text-orange-500" />
-                                </div>
-                                <div>
-                                    <h3 className="text-base font-bold text-gray-900 mb-1">導入したが現場で使われない</h3>
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        ツールを入れたが定着しない。現場の運用まで一緒に考えてほしい。
-                                    </p>
-                                </div>
+                            <div className="p-5">
+                                <h3 className="text-base font-bold text-gray-900 mb-1.5">導入したが現場で使われない</h3>
+                                <p className="text-gray-500 leading-relaxed text-sm">
+                                    ツールを入れたが定着しない。現場の運用まで一緒に考えてほしい。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -381,7 +377,7 @@ function App() {
                                     <Brain className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-1">AI導入顧問契約</h3>
-                                <p className="text-2xl font-bold text-yellow-300 mb-4">月98,000円〜 / 社</p>
+                                <p className="text-2xl font-bold text-yellow-300 mb-4">月15万円〜 / 社</p>
                             </div>
                             <ul className="space-y-2 text-blue-100 flex-1">
                                 <li className="flex items-start gap-2">
