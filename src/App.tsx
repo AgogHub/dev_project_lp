@@ -152,13 +152,9 @@ function App() {
                             <div className="relative w-full max-w-sm">
                                 <div className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-2xl scale-105"></div>
                                 <img
-                                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=560&fit=crop"
+                                    src={`${import.meta.env.BASE_URL}teamwork.jpg`}
                                     alt="業務改善のイメージ"
                                     className="relative w-full h-72 md:h-96 object-cover rounded-2xl shadow-2xl"
-                                    onError={(e) => {
-                                        const el = e.currentTarget
-                                        el.style.display = 'none'
-                                    }}
                                 />
                                 {/* 浮かぶ実績カード */}
                                 <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3">
@@ -230,13 +226,9 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
+                                    src={`${import.meta.env.BASE_URL}overwhelmed.jpg`}
                                     alt="パソコンの前で悩む経営者"
                                     className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        e.currentTarget.parentElement!.classList.add('bg-blue-50')
-                                        e.currentTarget.style.display = 'none'
-                                    }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             </div>
@@ -257,13 +249,9 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
+                                    src={`${import.meta.env.BASE_URL}financial_stress.jpg`}
                                     alt="コストを気にして書類を見る経営者"
                                     className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        e.currentTarget.parentElement!.classList.add('bg-green-50')
-                                        e.currentTarget.style.display = 'none'
-                                    }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             </div>
@@ -284,13 +272,9 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
+                                    src={`${import.meta.env.BASE_URL}contemplation.jpg`}
                                     alt="一人でデスクに向かう経営者"
                                     className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        e.currentTarget.parentElement!.classList.add('bg-purple-50')
-                                        e.currentTarget.style.display = 'none'
-                                    }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             </div>
@@ -311,13 +295,9 @@ function App() {
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <div className="relative h-44 overflow-hidden">
                                 <img
-                                    src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=600&h=360&fit=crop"
+                                    src={`${import.meta.env.BASE_URL}unused.jpg`}
                                     alt="ツールが使われていない職場"
                                     className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        e.currentTarget.parentElement!.classList.add('bg-orange-50')
-                                        e.currentTarget.style.display = 'none'
-                                    }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             </div>
